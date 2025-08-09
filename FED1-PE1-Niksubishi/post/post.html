@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The home page to Fork & Focus" />
+    <title>Fork & Focus</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script type="module" src=".././js/main.mjs"></script>
+  </head>
+
+  <body>
+    <div class="content-wrapper">
+      <header>
+        <a href="../index.html">
+          <img
+            src="../images/logos/mainlogo.png"
+            alt="Writing saying Fork & Focus with a cloche on top"
+            class="header-logo"
+          />
+        </a>
+        <nav id="nav-links"></nav>
+      </header>
+
+      <main>
+        <section id="new-post">
+          <h2>New Post</h2>
+          <form id="newPostForm">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required />
+
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" required></textarea>
+
+            <label for="imageUrl">Image URL:</label>
+            <input type="text" id="imageUrl" name="imageUrl" />
+
+            <label for="tags">Tags (comma separated):</label>
+            <input type="text" id="tags" name="tags" />
+
+            <button type="submit">Save</button>
+          </form>
+          <div id="postError" style="color: red; display: none">
+            An error occurred. Please try again.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo-container">
+          <img
+            src="../images/logos/mainlogo.png"
+            alt="Writing saying Fork & Focus with a cloche on top"
+            class="footer-logo"
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

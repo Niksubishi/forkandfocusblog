@@ -1,0 +1,720 @@
+@import url("reset.css");
+@import url("headerfooter.css");
+@import url("variables.css");
+
+@font-face {
+  font-family: "JosefinSans-Regular";
+  src: url("../fonts/JosefinSans-Regular.ttf") format("truetype");
+  font-size: 20px;
+}
+
+@font-face {
+  font-family: "JosefinSans-Light";
+  src: url("../fonts/JosefinSans-Light.ttf") format("truetype");
+  font-size: 20px;
+}
+
+/* HOMEPAGE */
+
+#carousel-section {
+  background-color: var(--white);
+  padding: 5%;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 935px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-container h1 {
+  font-family: "JosefinSans-Light", sans-serif;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 0;
+  padding: 0;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
+}
+
+.carousel-item {
+  flex: 0 0 calc(33.333% - 13.333px);
+  background-color: #647792;
+  padding: 0;
+  text-align: left;
+  color: white;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  min-width: 200px;
+  font-family: "JosefinSans-Light", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+}
+
+.carousel-item a {
+  display: block;
+  height: 60%;
+  overflow: hidden;
+}
+
+.carousel-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-item-content {
+  padding: 15px;
+  height: 40%;
+  overflow: hidden;
+}
+
+.carousel-item h2 {
+  font-family: "JosefinSans-Light", sans-serif;
+  margin: 0;
+  font-size: 1.2em;
+  color: white;
+}
+
+.carousel-item p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: white;
+}
+
+.carousel-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.carousel-item-content a {
+  text-decoration: underline;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carousel-arrow {
+  background-color: #647792;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin: 0 20px;
+}
+
+.carousel-arrow:hover {
+  background-color: #6a8bb2;
+}
+
+.carousel-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e1dd;
+  z-index: 1000;
+}
+
+.lds-circle {
+  color: #0d1b2a;
+}
+
+.lds-circle,
+.lds-circle div {
+  box-sizing: border-box;
+}
+.lds-circle {
+  display: inline-block;
+  transform: translateZ(1px);
+}
+.lds-circle > div {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  background: currentColor;
+  border-radius: 50%;
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+  0%,
+  100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+
+@media (max-width: 800px) {
+  .carousel-item {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+@media (max-width: 500px) {
+  .carousel-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/*WELCOME*/
+
+#welcome-section {
+  background-color: #0d1b2a;
+  padding: 5% 0;
+}
+
+#welcome-section .welcome-content {
+  max-width: 970px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+#welcome-section .welcome-logo {
+  display: block;
+  width: 8%;
+  margin: 0 auto 40px;
+}
+
+#welcome-section p {
+  color: white;
+  font-family: "JosefinSans-Light", sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+#welcome-section p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  #welcome-section .welcome-logo {
+    width: 10%;
+  }
+}
+
+/* Post List Section */
+
+#post-list-section {
+  background-color: #415a77;
+  padding: 20px;
+}
+
+#filter-grid-container {
+  max-width: 935px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.filter-label {
+  display: block;
+  color: white;
+  font-family: "JosefinSans-Light", sans-serif;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+#tagFilter {
+  width: 150px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  font-family: "JosefinSans-Regular", sans-serif;
+}
+
+#toggleOrderBtn {
+  background-color: #647792;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "JosefinSans-Regular", sans-serif;
+  margin-bottom: 20px;
+}
+
+#toggleOrderBtn:hover {
+  background-color: #6a8bb2;
+}
+
+#post-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.post-square {
+  background-color: #647792;
+  padding: 0;
+  text-align: left;
+  color: white;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: 300px;
+  min-width: 200px;
+  font-family: "JosefinSans-Light", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+}
+
+.post-square > a {
+  display: block;
+  height: 60%;
+  overflow: hidden;
+}
+
+.post-square-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-square-content {
+  padding: 15px;
+  height: 40%;
+  overflow: hidden;
+}
+
+.post-square h2 {
+  margin: 0;
+  font-size: 1.2em;
+  color: white;
+}
+
+.post-square p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: white;
+}
+
+.post-square a {
+  color: white;
+  text-decoration: none;
+}
+
+.post-square-content a {
+  text-decoration: underline;
+}
+
+.post-square-content h2,
+.carousel-item-content h2 {
+  margin-top: 0;
+  font-size: 1.1em;
+  line-height: 1.2;
+}
+
+.post-square-content p,
+.carousel-item-content p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  line-height: 1.2;
+}
+
+#showMoreBtn {
+  margin-top: 5%;
+  background-color: #647792;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "JosefinSans-Regular", sans-serif;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#showMoreBtn:hover {
+  background-color: #6a8bb2;
+}
+
+@media (max-width: 800px) {
+  .post-square {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 500px) {
+  .post-square {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/*BLOGPAGE*/
+
+body {
+  background-color: var(--white);
+  color: black;
+  font-family: "JosefinSans-Regular", sans-serif;
+}
+
+#post-content {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.post-title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.post-author,
+.post-date {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.post-body {
+  text-align: left;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.post-tags {
+  text-align: left;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+.shareable-link-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.shareable-link-input {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px 0 0 3px;
+}
+
+#copyLinkBtn {
+  padding: 5px 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+#copyLinkBtn:hover {
+  background-color: #555;
+}
+
+#editPostBtn {
+  margin-top: 5%;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "JosefinSans-Regular", sans-serif;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 900px) {
+  #post-content {
+    width: 90%;
+  }
+}
+
+/* Login and Register Pages */
+
+#login,
+#register {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#login h2,
+#register h2 {
+  font-family: "JosefinSans-Regular", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#loginForm label,
+#registerForm label {
+  font-family: "JosefinSans-Regular", sans-serif;
+  display: block;
+  margin-bottom: 5px;
+}
+
+#loginForm input,
+#registerForm input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+#loginForm button,
+#registerForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: "JosefinSans-Regular", sans-serif;
+}
+
+#loginForm button:hover,
+#registerForm button:hover {
+  background-color: #555;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+#togglePassword {
+  background-color: #647792;
+  margin-bottom: 10px;
+}
+
+#togglePassword:hover {
+  background-color: #6a8bb2;
+}
+
+/* NEW POST PAGE */
+
+#new-post {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#new-post h2 {
+  font-family: "JosefinSans-Regular", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#newPostForm label {
+  font-family: "JosefinSans-Regular", sans-serif;
+  display: block;
+  margin-bottom: 5px;
+}
+
+#newPostForm input[type="text"],
+#newPostForm input[type="url"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#newPostForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  resize: vertical;
+}
+
+#newPostForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#newPostForm button:hover {
+  background-color: #555;
+}
+
+/* EDIT POST PAGE */
+
+#edit-post {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#edit-post h2 {
+  font-family: "JosefinSans-Regular", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#editPostForm label {
+  font-family: "JosefinSans-Regular", sans-serif;
+  display: block;
+  margin-bottom: 5px;
+}
+
+#editPostForm input[type="text"],
+#editPostForm input[type="url"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#editPostForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  resize: vertical;
+  min-height: 200px;
+}
+
+#editPostForm button,
+#deletePostBtn {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: "JosefinSans-Regular", sans-serif;
+  margin-bottom: 10px;
+}
+
+#editPostForm button:hover,
+#deletePostBtn:hover {
+  background-color: #555;
+}
+
+#deletePostBtn {
+  background-color: #d9534f;
+}
+
+#deletePostBtn:hover {
+  background-color: #c9302c;
+}
+
+@media (max-width: 768px) {
+  #edit-post,
+  #new-post,
+  #login,
+  #register {
+    max-width: 90%;
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  #editPostForm textarea,
+  #newPostForm textarea {
+    min-height: 150px;
+  }
+
+  #editPostForm input[type="text"],
+  #editPostForm input[type="url"],
+  #newPostForm input[type="text"],
+  #newPostForm input[type="url"],
+  #loginForm input,
+  #registerForm input {
+    padding: 8px;
+  }
+
+  #editPostForm button,
+  #deletePostBtn,
+  #newPostForm button,
+  #loginForm button,
+  #registerForm button {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  #edit-post,
+  #new-post,
+  #login,
+  #register {
+    max-width: 95%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  #edit-post h2,
+  #new-post h2,
+  #login h2,
+  #register h2 {
+    font-size: 1.5em;
+  }
+
+  #editPostForm textarea,
+  #newPostForm textarea {
+    min-height: 120px;
+  }
+}

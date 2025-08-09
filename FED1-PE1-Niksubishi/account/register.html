@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The home page to Fork & Focus" />
+    <title>Fork & Focus</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <script type="module" src=".././js/main.mjs"></script>
+  </head>
+
+  <body>
+    <div class="content-wrapper">
+      <header>
+        <a href="../index.html">
+          <img
+            src="../images/logos/mainlogo.png"
+            alt="Writing saying Fork & Focus with a cloche on top"
+            class="header-logo"
+          />
+        </a>
+        <nav id="nav-links"></nav>
+      </header>
+
+      <main>
+        <section id="register">
+          <h2>Register</h2>
+          <form id="registerForm">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="No special characters except underscore"
+            />
+            <p id="nameError" class="error-message"></p>
+
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="stud.noroff.no only"
+            />
+            <p id="emailError" class="error-message"></p>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+            <p id="passwordError" class="error-message"></p>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              required
+            />
+            <p id="confirmPasswordError" class="error-message"></p>
+
+            <button type="button" id="togglePassword">Show password</button>
+            <button type="submit">Register</button>
+          </form>
+          <p id="registerError" class="error-message"></p>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo-container">
+          <img
+            src="../images/logos/mainlogo.png"
+            alt="Writing saying Fork & Focus with a cloche on top"
+            class="footer-logo"
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
